@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { LibComponent } from 'lib'
+import { TestClass, TestInterface } from './types'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<lib-lib />`,
+  imports: [
+    LibComponent
+  ],
 })
 export class AppComponent {
   title = 'test';
+  tc: TestClass = new TestClass()
+  ti: TestInterface = {
+    url: '',
+    count: 0
+  }
 }
